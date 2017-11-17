@@ -1,0 +1,31 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+ 
+<title>Welcome To Revision</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
+
+</head>
+<body>
+hp http://stackoverflow.com/questions/30195720/how-to-use-react-createelement-children-parameter-without-jsx
+<div id ="example"></div>
+
+
+<script type="text/javascript">
+var Bacon = React.createClass({
+render :function (){
+return React.createElement('div', null, `Hello ${this.props.toWhat} manish - ${ this.props.toYes}`);
+
+
+}
+});
+
+ReactDOM.render( React.createElement(Bacon, {toWhat: 'World', toYes:'Yes'}, null),
+  document.getElementById('example')
+  );
+  
+</script>
+</body>
+</html>

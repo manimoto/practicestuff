@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Welcome To Tech CBT</title>
+
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+<script src="../node_modules/angular/angular.js"></script>
+<script src="app.js"></script>
+<script src="Controllers/emp-binding.js"></script>
+<script src="Controllers/customdir.js"></script>
+<script src="Controllers/ser-controllers.js"></script>
+<script src="Controllers/ng-loops.js"></script>
+<script src="Controllers/msg.js"></script>
+<script src="Controllers/watcherr.js"></script>
+<script src="directives/myinfomsg.js"></script>
+<script src="directives/msgDirective.js"></script>
+<script src="Controllers/evalparse.js"></script>
+
+<script src="services/firstservice.js"></script>
+<script src="services/secondservice.js"></script>
+
+
+
+<body ng-app="myApp">
+    
+    <!-- <div ng-controller="CustomDirController">
+        
+           
+            <button class="btn btn-primary" ng-click="getAllEmployee()">Search</button>
+      
+    
+    <hr>
+    <div ng-repeat="r in records" class="col-md-4">
+    <div my-info-msg ng-if ="r.employeeNo != undefined">
+    </div>
+    </div>
+
+
+</div>
+
+
+<div ng-controller="CustomMsgController">
+    <div message text="{{i}}" ng-repeat="i in [1,2,3,4,5]">
+       {{i}}    
+
+    </div> 
+</div>-->
+<!-- <div ng-controller="watcherr"> -->
+
+
+<!-- a = <input ng-model="o.a"/>
+b = <input ng-model="o.b"/>
+
+<div>c = {{o.c}}</div> -->
+
+<!-- <div ng-repeat="o in emps">
+<div> {{o.empno}} - {{o.ename}}</div>
+</div>
+<button ng-click="addEmp()">add</button>
+<button ng-click="modify3rdEmp()">modify 3rd Employee</button>
+ -->
+
+
+
+
+--------
+
+<!-- <div ng-controller="evalparse">
+{{a}} {{b}}
+
+<button ng-click="demo()">Demo</button>
+<button ng-click="demoParse()">Demo Parse</button>
+<button ng-click="interPolate()">interPolate</button>
+
+</div> -->
+
+
+
+<!-- <div ng-controller="scopeInherit">
+
+    Sample Data = {{a}} and {{b}}<br/>
+    sample data p q  ={{o.p}} and {{o.q}}
+    <input type="text" ng-model="a"/>
+    object o.p <input type="text" ng-model="o.p"/>
+        <div ng-controller="scopeInherit2">
+                Sample Data = {{a}} and {{b}}<br/>
+                Sample Data = {{c}} and {{d}}
+                sample data  p q     ={{o.p}} and {{o.q}}
+                <input type="text" ng-model="a"/>
+                parent onbject o.p  <input type="text" ng-model="o.p"/>
+{{$parent.a}}
+        </div>
+
+</div> -->
+
+<div ng-controller="scopeInherit">
+        Sample Data  Controller = {{a}} and {{b}}<br/>
+        Directive Instance 1 <div messageinherit></div>
+        Directive Instance 2 <div messageinherit></div>
+        
+        <button ng-click="changeValueB()">Change B parent</button>
+</div>
+
+
+</body>
+
+</html>

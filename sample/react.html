@@ -1,0 +1,37 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+ 
+<title>Welcome To Revision</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script> 
+</head>
+<body>
+<div>hi</div>
+<div id ="example"></div>
+
+<div id ="example1"></div>
+
+<script type="text/babel">
+var SecBacon = React.createClass({
+render :function (){
+return(<h2>Hi this is second component</h2>);
+}
+});
+
+var Bacon = React.createClass({
+render :function (){
+return(<h2>Hi i am there a component</h2>);
+}
+});
+ReactDOM.render(<Bacon /> , document.getElementById('example'));
+ReactDOM.render(<SecBacon />, document.getElementById('example1'));
+
+
+
+
+</script>
+</body>
+</html>

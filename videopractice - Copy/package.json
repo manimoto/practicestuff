@@ -1,0 +1,29 @@
+{
+  "name": "nodie",
+  "version": "1.0.0",
+  "description": "Just example",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "1.6.5",
+    "angular-animate": "1.6.5",
+    "angular-route": "1.5.8",
+    "bootstrap": "^3.3.7",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "jquery": "^3.2.1",
+    "body-parser": "~1.5.2"
+  },
+  "devDependencies": {
+    "connect-browser-sync": "^2.1.0",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^1.0.5",
+    "lite-server": "^2.3.0"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manish",
+  "license": "ISC"
+}

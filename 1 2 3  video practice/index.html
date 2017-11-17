@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Welcome To Tech CBT</title>
+<script src="/node_modules/angular/angular.js" ></script>
+<script src="app/app.js"></script>
+<body ng-app="myApp">
+        
+    <div ng-controller="emp as o"> 
+        <!-- //o is the insatance of emp controler -->
+        {{o.name }} LOOKS you are earning {{o.salary}} <!--    //one way data binding -->
+        
+    </div>
+
+    <!-- scope gets merged into controller instance -->
+    <div id="secondCntrl" ng-controller="emp1"> 
+        <!-- //emp creates new instance along with scope, of controller  -->
+    <!-- -//context and memory area || sits at dom and attached to element -->
+        {{name}}
+        <!-- //Data binding -->
+    </div>
+
+    <div ng-controller="emp2">
+        Hi {{name}} lokks you salay is {{salary}} and your annual salary is {{getAnnualSalary()}}
+    </div>
+
+    
+    Sum of {{1+2}} 
+   
+<div ng-controller="customerInfo">
+    Hello Customer Name {{name}} , looks like you are living in {{city}}
+
+</div>
+
+<div ng-controller="Hybrid as o">  
+            <!-- hybrid as you can also bind $scope props -->
+        <!-- //o is the insatance of emp controler -->
+        {{o.name }} LOOKS you are from {{city}} <!--    //one way data binding -->
+        
+    </div>
+
+    <!-- direct evaluation of expressions -->
+</body> 
+</html>
+
+
+
+

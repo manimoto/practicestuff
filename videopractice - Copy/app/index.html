@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Welcome To Tech CBT</title>
+
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+<script src="../node_modules/angular/angular.js"></script>
+<script src="app.js"></script>
+<script src="Controllers/emp-binding.js"></script>
+<script src="Controllers/customdir.js"></script>
+<script src="Controllers/ser-controllers.js"></script>
+<script src="Controllers/ng-loops.js"></script>
+<script src="directives/myinfomsg.js"></script>
+<script src="services/firstservice.js"></script>
+<script src="services/secondservice.js"></script>
+
+
+
+<body ng-app="myApp">
+    <!-- <div ng-controller="emp">
+        Details of <strong> {{Name}} </strong> :
+        <div ng-controller="empDetails">
+            {{$parent.Name}} , {{Name}} earns {{Sal}} and works in {{Dept}}
+            <div  ng-controller="empPayCheck">
+                Taxes : {{getTaxes()}} <br/>
+                Net : {{getNet()}}
+                TaxPercent : {{TaxPercent}}
+            </div>
+        </div>
+
+    </div>
+   
+    <div ng-controller="empBinding">
+        Value of a is : {{a}}
+        Value of b is : {{b}}
+    </div>
+
+    <hr>
+
+    <div ng-controller="empBinding">
+Value of a is : <span ng-bind="a"></span>
+Value of b is : <span ng-bind="b"></span>
+<button ng-click="doDoubleAndSum()">Calculate</button>
+<hr>
+<div> Result is :{{sum}}</div>
+<div>Initial value of a is : {{::a}}</div>
+<hr>
+<input ng-model="a" type="text"/><br>
+value of a is : {{a}}
+
+<input ng-model="b" type="text"/><br>
+value of b is : {{b}}
+    
+<button ng-click="doSum()">Sum</button>
+value of sum is : {{dsum}}
+</div> -->
+
+    <!-- <div ng-controller="empCalc">
+        <input ng-model="a" type="text" /><br> value of a is : {{a}}
+
+        <input ng-model="b" type="text" /><br> value of b is : {{b}}
+        <button ng-click="doSum()">Sum</button> value of sum is : {{dsum}}
+    </div> -->
+
+    <!-- <div ng-controller="empCalcCB">
+            <input ng-model="a" type="text" /><br> value of a is : {{a}}
+    
+            <input ng-model="b" type="text" /><br> value of b is : {{b}}
+    
+            <button ng-click="doSumCB()">Sum</button> value of sum is : {{dsumCB}}
+        </div> -->
+
+    <hr>
+    <span> here i am starting ngif </span>
+    <div ng-controller="ng-loops">
+
+        <form class="form-inline">
+            <div class="form-group">
+                <label> Enter Employee No :</label>
+                <input type="text" ng-model="searchEmpno" />
+            </div>
+            <button class="btn btn-primary" ng-click="doSearch(searchEmpno)">Search</button>
+        </form>
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-2">Employee No</div>
+            <div class="col-sm-2">{{empno}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">Name</div>
+            <div class="col-sm-2">{{ename}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">Salary</div>
+            <div class="col-sm-2">{{sal | currency:"$":2}}</div>
+            <!-- <span ng-if="sal > 7000" class="glyphicon glyphicon-warning-sign"></span> -->
+            <!-- <span ng-show="sal > 7000" class="glyphicon glyphicon-warning-sign"></span> -->
+            <span ng-hide="sal == undefined || sal <= 7000" class="glyphicon glyphicon-warning-sign"></span>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">Hire Date</div>
+            <div class="col-sm-2">{{hiredate | date : 'mediumDate'}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">DOB</div>
+            <div class="col-sm-2">{{dob}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">Department</div>
+            <div class="col-sm-2">{{dept}}</div>
+        </div>
+
+
+        <hr>
+
+
+
+
+        <table class="table table-striped">
+            <button class="btn btn-primary" ng-click="getAllEmployee()">Search</button>
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Name</td>
+                    <td>Salary</td>
+                    <td>Dept</td>
+
+                </tr>
+            </thead>
+            <tr ng-repeat="r in records |filter: {name : 'r' , employeeNo:'22'}">
+                <td>{{r.employeeNo}}</td>
+                <td>{{r.name}}</td>
+                <td>{{r.salary}} <span ng-show="r.salary > 7000" class="glyphicon glyphicon-warning-sign"></span></td>
+                <td>{{r.dept}}</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <!-- <div >
+            <div class="row">
+                <div class="col-sm-2">Employee No</div>
+                <div class="col-sm-2">{{r.employeeNo}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">Name</div>
+                <div class="col-sm-2">{{r.name}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">Salary</div>
+                <div class="col-sm-2">{{r.salary}}</div>
+                <span ng-if="sal > 7000" class="glyphicon glyphicon-warning-sign"></span> 
+               <span ng-show="sal > 7000" class="glyphicon glyphicon-warning-sign"></span> 
+                <span ng-hide="sal == undefined || r.salary <= 7000" class="glyphicon glyphicon-warning-sign"></span>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">Hire Date</div>
+                <div class="col-sm-2">{{r.hireDate}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">DOB</div>
+                <div class="col-sm-2">{{r.dob}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">Department</div>
+                <div class="col-sm-2">{{r.dept}}</div>
+            </div>
+
+        </div> -->
+
+    <!-- <script id="__bs_script__">
+        document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+    </script>  -->
+    <!-- <script type="text/ng-template" id="my-info-msg.html">
+    <strong>{{iceCream}}</strong>
+   </script> -->
+    <hr/>
+    <div ng-controller="CustomDirController">
+        <form class="form-inline">
+            <div class="form-group">
+                <label>Enter Employee number</label>
+
+                <!-- <div my-info-msg>
+            </div>
+            <my-info-msg></my-info-msg> -->
+                <input type="text" class="form-control" ng-model="searchEmpno" />
+            </div>
+            <button class="btn btn-primary" ng-click="getAllEmployee()">Search</button>
+        </form>
+    
+    <hr>
+    <div ng-repeat="r in records" class="col-md-4">
+    <div my-info-msg ng-if ="r.employeeNo != undefined">
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+
+</html>

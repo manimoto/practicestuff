@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>Welcome To React JS !</title>
+
+</head>
+
+
+<body>
+
+<div id ="example">
+
+</div>
+<script type="text/babel">
+var Bacon = React.createClass({
+render: function(){
+return(<h2>Hi i am there a component !https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask </h2>);
+
+
+}
+
+});
+
+
+ReactDom.render(<Bacon />, document.getElementById('example'));
+</script>
+</body>
+
+
+</html>
+
+
+
+
+
+
+------------------------
+<html>
+<head>
+<title>Welcome !</title>
+</head>
+<body>
+<div id ="example">
+</div>
+<script="text/babel">
+var Bacon = React.createClass({
+render : function(){
+return(
+<div>
+<h1>Hey im there in component multi times</h1>
+<h2>Hey im there in component multi times</h2>
+<h3>Hey im there in component multi times</h3>
+</div>
+
+);
+}
+
+});
+
+
+ReactDom.render(<div><Bacon/> <Bacon/> <Bacon /></div>,document.getElementById('example'));
+</script>
+
+</body>
+
+</html>
+
+
+
+---------------------------------------------------------------------------
+
+
+<html>
+<head><title>Im there to generate component dynamic value by setting up property in React Dom rendering </title></head>
+
+<body>
+<div id="example"></div>
+
+<script type = "text/babel">
+var Movie = React.createClass({
+render : function(){
+return(<div>
+<h1>{this.props.title}</h1>
+<h2>{this.props.genre}</h2>
+</div>
+);
+}
+
+
+});
+
+ReactDom.render(<div><Movie title="Papa" genre="genret" />
+<Movie title="umummhaa" genre="genric"/>
+<Movie title="mama" genre="genrot"/>
+</div>,getElementById("example"));
+</script>
+
+
+</body>
+
+</html>

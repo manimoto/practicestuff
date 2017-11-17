@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" ng-class="(r.salary <= 7000)? 'panel panel-primary':'panel panel-danger'">
+        <h4>{{r.name}}</h4>
+    </div>
+    <div class="panel-body">
+   <div class="row">
+        <div class="col-sm-4"><strong>Employee No</strong></div>
+        <div class="col-sm-7">{{r.employeeNo}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><strong>Name</strong></div>
+        <div class="col-sm-7">{{r.name}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><strong>Salary</strong></div>
+        <div class="col-sm-7">{{r.salary | currency:"$":2}}</div>
+        <!-- <span ng-if="sal > 7000" class="glyphicon glyphicon-warning-sign"></span> -->
+        <!-- <span ng-show="sal > 7000" class="glyphicon glyphicon-warning-sign"></span> -->
+        <span ng-hide="sal == undefined || sal <= 7000" class="glyphicon glyphicon-warning-sign"></span>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><strong> Date</strong></div>
+        <div class="col-sm-7">{{r.hireDate | date : 'mediumDate'}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><strong>DOB </strong></div>
+        <div class="col-sm-7">{{r.dob}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><strong>Dept</strong></div>
+        <div class="col-sm-7">{{r.dept}}</div>
+    </div>
+</div>
